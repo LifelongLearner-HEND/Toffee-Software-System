@@ -1,17 +1,22 @@
 package MembershipManager;
 
-import CartItemManager.Catalog;
+import CartItemManager.Item;
+
+import static CustomerService.Database.catalog;
 
 public class GeneralCustomer {
 
     public void viewCatalog() {
-        Catalog catalog = null;
-        catalog.displayCatalog();
+//        Database database = new Database();
+        for (Item item : catalog) {
+            System.out.println("[Name: " + item.getName() + ",Price:  " + item.getPrice() + " ,Brand: " +
+                    item.getBrand() + " ,Discount: " + item.getDiscountPercentage() +
+                    " ,Number of Units: " + item.getNumberOfUnits() + "]");
+        }
     }
 
-//    public void registerUser() {
-//        // register a new user
-//        Register register = null;
-//        register.register(id, pass);
-//    }
+    public void registerUser(RegisteredCustomer customer) {
+        Register joinSystem = new Register();
+        joinSystem.register(customer);
+    }
 }

@@ -1,5 +1,6 @@
 package MembershipManager;
 
+
 public class RegisteredCustomer extends GeneralCustomer{
     private String id;
     private String password;
@@ -20,13 +21,11 @@ public class RegisteredCustomer extends GeneralCustomer{
     }
 
     // login to the system
-    public void login(String ID, String pass) {
+    public boolean login(String ID, String pass) {
         Login login = new Login();
-        login.authenticate(ID, pass);
+        return login.authenticate(ID, pass);
     }
-    public void makeOrder() {
-        // make an order
-    }
+
     public void setId(String id) {
         this.id = id;
     }
@@ -34,9 +33,13 @@ public class RegisteredCustomer extends GeneralCustomer{
         this.password = password;
     }
     public void setAddress(String address) {
+        this.address = address;
     }
+
     public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
     }
+
     public void setEmail(String email) {
         this.email = email;
     }
@@ -52,7 +55,9 @@ public class RegisteredCustomer extends GeneralCustomer{
         return address;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhoneNumber() { return phoneNumber;}
+
+    public String getEmail() {
+        return email;
     }
 }
