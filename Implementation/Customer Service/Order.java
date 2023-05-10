@@ -1,9 +1,11 @@
 package CustomerService;
 
 import CartItemManager.Cart;
-import MembershipManager.RegisteredCustomer;
 import CartItemManager.Item;
-import static CustomerService.Database.Customers_Data;
+import MembershipManager.RegisteredCustomer;
+
+import static CustomerService.Database.Customers_Address;
+import static CustomerService.Database.Customers_Phone;
 
 public class Order {
     private String orderStatus;
@@ -12,13 +14,11 @@ public class Order {
     private RegisteredCustomer customer;
     private Cart cart;
 
-    private CashPayment payment;
-
-    public Order(RegisteredCustomer customer, Cart cart, String orderStatus, double totalPrice) {
-        this.orderStatus = "Pending";
-        this.totalPrice = 0.0;
+    public Order( RegisteredCustomer customer, Cart cart, String orderStatus, double totalPrice) {
         this.customer = customer;
         this.cart = cart;
+        this.orderStatus = "Pending";
+        this.totalPrice = 0.0;
     }
 
     public double calAmount() {
@@ -33,12 +33,11 @@ public class Order {
         return totalPrice;
     }
 
-
     public void displayOrder() {
+        // get the phone number of the customer from the Customers_Phone database according to the customer id
         System.out.println("Customer ID: " + customer.getId());
-        System.out.println("Customer Phone Number: " + Customers_Data.get(customer.getId()).getPhoneNumber());
-//        System.out.println("Customer Address: " + Database.getCustomerAddress(customer.getId()));
+        System.out.println("Customer Phone Number: " + Customers_Phone.get(customer.getId()));
+        System.out.println("Customer Address: " + Customers_Address.get(customer.getId()));
         System.out.println("Order Status: " + orderStatus);
-//        System.out.println("Total Price: " + payment.totalPrice());
     }
 }

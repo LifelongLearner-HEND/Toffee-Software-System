@@ -2,12 +2,21 @@ package CustomerService;
 
 public class CashPayment extends Payment{
 
-    private Order price;
+    Order order;
+    public CashPayment(Order order) {
+        super();
+        this.order = order;
+    }
 
-    public CashPayment(double shippingCost) {
-        super(shippingCost);
+    public double getShippingCost() {
+        return super.shippingCost;
     }
-    public double totalPrice(){
-        return price.calAmount() + super.getShippingCost();
+
+    @Override
+    public double getTotalAmount() {
+        // total amount = total price of the order + shipping cost
+        return order.calAmount() + getShippingCost();
     }
+
+
 }
