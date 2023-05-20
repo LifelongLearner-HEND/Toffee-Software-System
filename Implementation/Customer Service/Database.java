@@ -5,6 +5,10 @@ import CartItemManager.Item;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * This class is used to store the data of the system
+ */
+
 public class Database {
     public static HashMap<String, String> Registered_Users = new HashMap<String, String>();
 
@@ -16,21 +20,25 @@ public class Database {
 
     public static ArrayList<Item> catalog = new ArrayList<Item>();
 
+    /**
+     * this is the constructor for the database class, it will initialize the data, it will add the registered users to the map, it will add the items to the catalog
+     *
+     */
     public Database() {
         // map of registered users (key --> ID, value --> password)
-        Registered_Users.put("0994536", "aa2832");
-        Registered_Users.put("0994530", "aa2832");
-        Registered_Users.put("0994789", "aa226b");
-        Registered_Users.put("0992125", "aa223c");
-        Registered_Users.put("0996419", "Ox2569");
-        Registered_Users.put("0993328", "jp2569");
+        Registered_Users.put("0994536", "Aa1236$$");
+        Registered_Users.put("0994530", "Bb6985**");
+        Registered_Users.put("0994789", "CDd1256#1");
+        Registered_Users.put("0992125", "AaBb*c123");
+        Registered_Users.put("0996419", "Qq1234@#2");
+        Registered_Users.put("0993328", "JPG1234@#2");
         // map of customers' phone numbers (key --> ID, value --> phone number)
-        Customers_Phone.put("0994536", "0777888");
-        Customers_Phone.put("0994530", "0777877");
-        Customers_Phone.put("0994789", "0777866");
-        Customers_Phone.put("0992125", "0777855");
-        Customers_Phone.put("0996419", "0777844");
-        Customers_Phone.put("0993328", "0777833");
+        Customers_Phone.put("0994536", "01114589325");
+        Customers_Phone.put("0994530", "01578412569");
+        Customers_Phone.put("0994789", "01200145896");
+        Customers_Phone.put("0992125", "01025412590");
+        Customers_Phone.put("0996419", "01236521458");
+        Customers_Phone.put("0993328", "01520148500");
         // map of customers' addresses (key --> ID, value --> address)
         Customers_Address.put("0994536", "8 Zwail st.");
         Customers_Address.put("0994530", "10 Giza st.");
@@ -38,11 +46,11 @@ public class Database {
         Customers_Address.put("0992125", "14 Alexandria st.");
         Customers_Address.put("0996419", "16 Mansoura st.");
         // map of customers' email (key --> ID, value --> email)
-        Customers_Email.put("0994536", "ahmed@mail.com");
-        Customers_Email.put("0994530", "ali@mail.com");
-        Customers_Email.put("0994789", "Marwa@mail.com");
-        Customers_Email.put("0992125", "Omar@mail.com");
-        Customers_Email.put("0996419", "Hoor@mail.com");
+        Customers_Email.put("0994536", "ahmed@gmail.com");
+        Customers_Email.put("0994530", "ali@gmail.com");
+        Customers_Email.put("0994789", "Marwa@gmail.com");
+        Customers_Email.put("0992125", "Omar@gmail.com");
+        Customers_Email.put("0996419", "Hoor@gmail.com");
         // catalog of items
         Item item1 = new Item("Caramel", 100, 10.0, "Cadbury", 3.0);
         Item item2 = new Item("Milk", 70, 20.0, "Ferrero Rocher", 0.0);
